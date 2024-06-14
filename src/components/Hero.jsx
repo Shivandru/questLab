@@ -11,6 +11,7 @@ import {
   Button,
   Image,
 } from "@chakra-ui/react";
+import brandLogoSvg from "../assets/brandLogoSvg.svg";
 const Hero = () => {
   return (
     <Box
@@ -95,6 +96,27 @@ const Hero = () => {
           }}
         />
       </Flex>
+      <Box
+        position="fixed"
+        bottom="20px"
+        right="20px"
+        width="4rem"
+        height="4rem"
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        background="#ffffff"
+        borderRadius="50%"
+        boxShadow="0px 0px 4px 4px #00000026"
+        zIndex="999"
+        bgGradient={"linear(to-r, #9035ff,#4299E1)"}
+        _hover={{
+          bg: "pink.300",
+          cursor: "pointer",
+        }}
+      >
+        <Image src={brandLogoSvg} alt="companyLogo" />
+      </Box>
     </Box>
   );
 };
