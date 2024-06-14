@@ -1,6 +1,7 @@
 import Hero from "./Hero";
 import { Container } from "@chakra-ui/react";
 import dottedRight from "../assets/rightSideDots.svg";
+import MainSwiper from "./MainSwiper";
 
 const Main = () => {
   return (
@@ -20,6 +21,7 @@ const Main = () => {
         }}
       >
         <Hero />
+        <MainSwiper />
       </Container>
     </main>
   );
