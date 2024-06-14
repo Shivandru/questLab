@@ -1,5 +1,6 @@
-import React from "react";
-import { Box, Heading, Text, Image } from "@chakra-ui/react";
+import React, { useEffect, useRef } from "react";
+import { Box } from "@chakra-ui/react";
+import { useAnimation } from "framer-motion";
 import lower1 from "../assets/lower1.svg";
 import lower2 from "../assets/lower2.svg";
 import lower3 from "../assets/lower3.svg";
@@ -7,9 +8,37 @@ import lower4 from "../assets/lower4.svg";
 import lower5 from "../assets/lower5.svg";
 import lower6 from "../assets/lower6.svg";
 import Card from "../sections/Card";
+
 const LowerComponent = () => {
+  const controls = useAnimation();
+  const gridRef = useRef(null);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          controls.start({
+            y: 0,
+            opacity: 1,
+            transition: { duration: 0.5, ease: "easeOut" },
+          });
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (gridRef.current) {
+      observer.observe(gridRef.current);
+    }
+
+    return () => {
+      if (gridRef.current) {
+        observer.unobserve(gridRef.current);
+      }
+    };
+  }, [controls]);
   return (
     <Box
+      ref={gridRef}
       display={"grid"}
       gridTemplateColumns={{
         base: "repeat(1, 1fr)",
@@ -29,6 +58,7 @@ const LowerComponent = () => {
         des={
           "AI-driven personalization enhances user engagement with unique experiences."
         }
+        controls={controls}
       />
       <Card
         pic={lower2}
@@ -36,6 +66,7 @@ const LowerComponent = () => {
         des={
           "Utilize our analytics for instant insights on user behavior and app performance."
         }
+        controls={controls}
       />
       <Card
         pic={lower3}
@@ -43,6 +74,7 @@ const LowerComponent = () => {
         des={
           "Effortlessly integrate with our robust, cross-platform SDKs for maximum compatibility."
         }
+        controls={controls}
       />
       <Card
         pic={lower4}
@@ -50,6 +82,7 @@ const LowerComponent = () => {
         des={
           "Keep content engaging with AI-powered optimization, adapting to user preferences."
         }
+        controls={controls}
       />
       <Card
         pic={lower5}
@@ -57,6 +90,7 @@ const LowerComponent = () => {
         des={
           "Quest's scalable solutions ensure seamless growth without performance compromise."
         }
+        controls={controls}
       />
       <Card
         pic={lower6}
@@ -64,6 +98,7 @@ const LowerComponent = () => {
         des={
           "Quest ensures security with data protection, compliance, and secure transactions."
         }
+        controls={controls}
       />
     </Box>
   );

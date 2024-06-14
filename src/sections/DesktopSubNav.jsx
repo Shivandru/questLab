@@ -17,6 +17,10 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
       p={1}
       rounded={"md"}
       _hover={{ bg: useColorModeValue("gray.200", "gray.700") }}
+      bg="#292929"
+      opacity="85.5%"
+      color="#ffffff"
+      w="10rem"
     >
       <Stack direction={"row"} align={"center"} spacing={1}>
         <Box>
