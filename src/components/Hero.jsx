@@ -16,7 +16,6 @@ const Hero = () => {
   return (
     <Box
       p={"2rem"}
-      border={"1px solid black"}
       sx={{
         backgroundImage: `url(${dottedLeft})`,
         backgroundPosition: "left",
