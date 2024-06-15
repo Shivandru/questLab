@@ -106,12 +106,13 @@ const Hero = () => {
         justifyContent="center"
         background="#ffffff"
         borderRadius="50%"
-        boxShadow="0px 0px 4px 4px #00000026"
+        boxShadow="0px 0px 15px 4px rgba(144, 53, 255, 0.5), 0px 0px 15px 4px rgba(66, 153, 225, 0.5)"
         zIndex="999"
         bgGradient={"linear(to-r, #9035ff,#4299E1)"}
         _hover={{
           bg: "pink.300",
           cursor: "pointer",
+          boxShadow: "0px 0px 20px 6px rgba(255, 192, 203, 0.7)",
         }}
       >
         <Image src={brandLogoSvg} alt="companyLogo" />

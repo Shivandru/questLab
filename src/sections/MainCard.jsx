@@ -12,14 +12,14 @@ const MainCard = ({ para, name, position, companyLogo, avatar }) => {
   return (
     <Center py={6} h="auto">
       <Box
-        maxW={"445px"}
+        maxW={"560px"}
         w={"full"}
         bg="#18171e"
         boxShadow={"2xl"}
         rounded={"md"}
         p={6}
         overflow={"hidden"}
-        h="20rem"
+        h={{ base: "auto", sm: "auto", md: "20rem", lg: "16rem" }}
       >
         <Stack>
           <Text color={"#d5d4d6"}>{para}</Text>
@@ -33,7 +33,7 @@ const MainCard = ({ para, name, position, companyLogo, avatar }) => {
             <Text color={"#d5d4d6"}>{position}</Text>
           </Stack>
           <Spacer />
-          <Image src={companyLogo} alt="comapnyLogo" w={"5rem"} />
+          <Image src={companyLogo} alt="comapnyLogo" w={"7rem"} />
         </Stack>
       </Box>
     </Center>

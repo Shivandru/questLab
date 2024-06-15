@@ -3,6 +3,8 @@ import { Container } from "@chakra-ui/react";
 import dottedRight from "../assets/rightSideDots.svg";
 import MainSwiper from "./MainSwiper";
 import LowerComponent from "./LowerComponent";
+import TopSection from "./TopSection";
+import Features from "./Features";
 
 const Main = () => {
   return (
@@ -23,6 +25,8 @@ const Main = () => {
         <Hero />
       </Container>
       <Container maxW={"7xl"} h="auto">
+        <TopSection />
+        <Features />
         <LowerComponent />
         <MainSwiper />
       </Container>
